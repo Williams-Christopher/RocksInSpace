@@ -4,7 +4,26 @@
     "mvc": "1.0",
     "name": "objUFO",
     "eventList": [
-        
+        {
+            "id": "33c55308-d411-4414-8732-b2c047828cc5",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "d513a112-48e7-4420-a920-d5b493761ab1"
+        },
+        {
+            "id": "70b04dc0-5145-4a8b-9cb6-9ba5a091ae80",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 3,
+            "m_owner": "d513a112-48e7-4420-a920-d5b493761ab1"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "parentObjectId": "00000000-0000-0000-0000-000000000000",

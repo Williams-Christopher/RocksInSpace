@@ -32,7 +32,7 @@ switch gameCurrentState {
 	
 	case gameState.NewRound:
 		gameRound += 1;
-		event_user(0);
+		event_user(0); // Space rock spawn event
 		gameCurrentState = gameState.Playing;
 	break;
 	
@@ -43,6 +43,12 @@ switch gameCurrentState {
 		
 		if(gameScore > gameHighScore) {
 			gameHighScore = gameScore;
+		}
+		
+		if(!instance_exists(objUFO)) {
+			if(random(1) >= min(.1 * gameRound, 1)) {
+				event_user(1); // UFO instance creation event
+			}
 		}
 	break;
 	

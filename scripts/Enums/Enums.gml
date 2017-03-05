@@ -16,3 +16,10 @@ enum gameState {
 	RoundEnding,
 	GameOver
 }
+
+// UFO Sizes becasue why not...
+enum ufoType {
+	New,
+	Large,
+	Small
+}
