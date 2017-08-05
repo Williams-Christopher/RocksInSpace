@@ -1,0 +1,16 @@
+Rocks in Space Punch List:
+updated 20170805
+* Hit shot percentage: hit * 100 / fired
+* Hyperspace
+* Ship collisions with rocks
+* Change the way smaller rocks are spawned to account for the parent rock vector and velocity
+* Game over display
+* Title screen with rocks drifting in the background
+* Clean up rock spawn code. Conndense to a more generic method instead of one for each rock size
+* Bullets handle collisons with rocks and call methods on the rocks. Should this be reversed?
+* Implement UFO shooting and collisions
+* Sounds! pew! pew! BOOOooommm! 'casue space!
+* New font for scores
+* Hit shot percentage bonus to score? 100 * hit shot percentage?
+* Clean up sprite rendering as it looks sloppy. New sprites? Overlooked options to improve?
+*
