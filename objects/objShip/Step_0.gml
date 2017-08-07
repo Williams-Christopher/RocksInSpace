@@ -28,6 +28,7 @@ if (keyboard_check_pressed(vk_space)) {
 		bullet.speed = 8;
 		//motion_add(image_angle, -5);
 		shotsOnScreen += 1;
+		audio_play_sound(sndPew, 1, false);
 	}	
 }
 

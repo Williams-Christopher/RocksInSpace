@@ -9,7 +9,7 @@ updated 20170805
 * Clean up rock spawn code. Conndense to a more generic method instead of one for each rock size
 * Bullets handle collisons with rocks and call methods on the rocks. Should this be reversed?
 * Implement UFO shooting and collisions
-* Sounds! pew! pew! BOOOooommm! 'casue space!
+* Sounds! pew! pew! BOOOooommm! 'casue space! pewpew added 20170806
 * New font for scores
 * Hit shot percentage bonus to score? 100 * hit shot percentage?
 * Clean up sprite rendering as it looks sloppy. New sprites? Overlooked options to improve?
