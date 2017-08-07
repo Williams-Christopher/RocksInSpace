@@ -1,8 +1,9 @@
 /// @description Insert description here
-// You can write your code in this editor
 
+// Housekeeping on the Rock instance
 with(other) {
 	event_user(0);
 }
 
+// Housekeeping and destruction of this bullet instance
 event_user(0);

@@ -1,10 +1,14 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+
+// R resets the game
 if(keyboard_check_pressed(ord("R"))) {
 	gameCurrentState = gameState.NewGame;
 }
 
+
+// ESC quits
 if(keyboard_check_pressed(vk_escape)) {
 	game_end();
 }
@@ -37,6 +41,7 @@ switch gameCurrentState {
 	break;
 	
 	case gameState.Playing:
+		// All hazards are cleared, end this round
 		if(!instance_exists(objRock) && !instance_exists(objBullet) && !instance_exists(objUFO)) {
 			gameCurrentState = gameState.RoundEnding;
 		}

@@ -1,5 +1,6 @@
 Rocks in Space Punch List:
-updated 20170805
+Created 20170805
+Updtaed 20170806
 * Hit shot percentage: hit * 100 / fired
 * Hyperspace
 * Ship collisions with rocks
@@ -8,9 +9,15 @@ updated 20170805
 * Title screen with rocks drifting in the background
 * Clean up rock spawn code. Conndense to a more generic method instead of one for each rock size
 * Bullets handle collisons with rocks and call methods on the rocks. Should this be reversed?
+	Yes. Move bullet collision handling to the Rock and UFO objects, let them call
+	event_user(0) on the bullet instance for housekeeping. This was really apparent when
+	trying to add code to the UFO to determine if the collision was with a bullet so that
+	the player score could be modified. Don't want the player getting points for suicidal
+	UFOs.
 * Implement UFO shooting and collisions
 * Sounds! pew! pew! BOOOooommm! 'casue space! pewpew added 20170806
 * New font for scores
 * Hit shot percentage bonus to score? 100 * hit shot percentage?
 * Clean up sprite rendering as it looks sloppy. New sprites? Overlooked options to improve?
-*
+* UFO spawn change needs addressing. Fresh UFOs are currently popping almost immediately on
+	destruction of their predecessor.

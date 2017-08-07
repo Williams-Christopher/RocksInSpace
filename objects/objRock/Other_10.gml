@@ -4,7 +4,7 @@
 switch (rockLifecycleState) {
 	case rockLifecycle.Large:
 	// We were a large rock, next one needs to be medium
-		objGameManager.gameScore += 20;
+		objGameManager.gameScore += 25;
 		for(i = 0; i<2; i++) {
 			var newRock = instance_create_layer(x, y, "instances", objRock);
 			with(newRock) {
