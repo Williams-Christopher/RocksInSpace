@@ -6,6 +6,7 @@ draw_set_color(c_white);
 draw_set_font(fntScore);
 draw_text(25, 25, string(gameScore));
 draw_text(window_get_width() / 2, 25, string(gameHighScore));
+draw_text(25, 50, "Lives: " + string(playerLives));
 
 // draw build date / version, bottom left
 draw_set_font(fntVersion);

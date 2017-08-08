@@ -17,6 +17,7 @@ switch gameCurrentState {
 	case gameState.NewGame:
 		gameScore = 0;
 		gameRound = 0;
+		playerLives = startingLives;
 		objShip.shotsOnScreen = 0;
 		
 		if (instance_exists(objBullet)) {
@@ -42,16 +43,30 @@ switch gameCurrentState {
 	
 	case gameState.Playing:
 		// All hazards are cleared, end this round
-		if(!instance_exists(objRock) && !instance_exists(objBullet) && !instance_exists(objUFO)) {
+		if(!instance_exists(objRock) && !instance_exists(objBullet) /*&& !instance_exists(objUFO)*/) {
 			gameCurrentState = gameState.RoundEnding;
+		}
+		
+		// Player is out of lives (for now, start a new game)
+		if(playerLives <= 0) {
+			gameCurrentState = gameState.NewGame
 		}
 		
 		if(gameScore > gameHighScore) {
 			gameHighScore = gameScore;
 		}
 		
+		if(gameScore >= bonusLifeInterval && gameScore != lastBonusScore && gameScore mod bonusLifeInterval == 0) {
+			playerLives += 1
+			// So that bonus lives aren't continually added while
+			// gameScore mod bonusLifeInterval == 0
+			lastBonusScore = gameScore;
+			// Also, play a sound?
+		}
+		
+		// Random chance for a UFO to spawn if one does not exist
 		if(!instance_exists(objUFO)) {
-			if(random(1) >= min(.1 * gameRound, 1)) {
+			if(random(100) <= min(1.5 * gameRound, 100)) {
 				event_user(1); // UFO instance creation event
 			}
 		}

@@ -5,8 +5,10 @@
 gameRound = 0;
 gameScore = 0;
 gameHighScore = 0;
-gameNewLifeInterval = 10000;
-
+bonusLifeInterval = 10000;
+lastBonusScore = 0;
+startingLives = 3;
+playerLives = 0;
 
 // For now, gameState just goes NewRound -> Playing -> GameEnding
 gameCurrentState = gameState.NewGame;
