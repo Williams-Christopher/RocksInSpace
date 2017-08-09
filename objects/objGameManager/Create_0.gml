@@ -6,11 +6,12 @@ gameRound = 0;
 gameScore = 0;
 gameHighScore = 0;
 bonusLifeInterval = 10000;
+bonusLifeEarned = 0;
 lastBonusScore = 0;
 startingLives = 3;
 playerLives = 0;
 
-// For now, gameState just goes NewRound -> Playing -> GameEnding
+// For now, gameState just goes NewGame -> NewRound -> Playing -> GameEnding
 gameCurrentState = gameState.NewGame;
 
 //Create initial space rock population

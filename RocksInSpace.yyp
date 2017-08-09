@@ -287,6 +287,14 @@
             }
         },
         {
+            "Key": "cb3c236a-5e32-419f-9524-628270ffca63",
+            "Value": {
+                "id": "4ea1786f-b2f8-4f4d-8b12-bda72a54b48e",
+                "resourcePath": "sounds\\sndBonusLife\\sndBonusLife.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "cc98d028-7bdd-4680-85f3-c87a7baa481e",
             "Value": {
                 "id": "b9a64ce1-6511-4ad4-8079-4dd1517d4e35",

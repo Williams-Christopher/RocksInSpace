@@ -7,6 +7,10 @@ if(keyboard_check_pressed(ord("R"))) {
 	gameCurrentState = gameState.NewGame;
 }
 
+// Testing - 1 adds 1k to gameScore
+if(keyboard_check_pressed(ord("1"))){
+	gameScore += 1000;
+}
 
 // ESC quits
 if(keyboard_check_pressed(vk_escape)) {
@@ -15,9 +19,10 @@ if(keyboard_check_pressed(vk_escape)) {
 
 switch gameCurrentState {
 	case gameState.NewGame:
-		gameScore = 0;
+		gameScore = 9000;
 		gameRound = 0;
 		playerLives = startingLives;
+		bonusLifeEarned = 0;
 		objShip.shotsOnScreen = 0;
 		
 		if (instance_exists(objBullet)) {
@@ -56,15 +61,16 @@ switch gameCurrentState {
 			gameHighScore = gameScore;
 		}
 		
-		if(gameScore >= bonusLifeInterval && gameScore != lastBonusScore && gameScore mod bonusLifeInterval == 0) {
-			playerLives += 1
-			// So that bonus lives aren't continually added while
-			// gameScore mod bonusLifeInterval == 0
-			lastBonusScore = gameScore;
-			// Also, play a sound?
+		// Check to see if a binus life has been earned	
+		if(gameScore - (bonusLifeEarned + 1) * bonusLifeInterval >= 0) {
+			playerLives += 1;
+			bonusLifeEarned += 1;
+			audio_play_sound(sndBonusLife, 1, false); // Hokey placeholder
 		}
 		
 		// Random chance for a UFO to spawn if one does not exist
+		// This still spawns UFOs almost constantly. Break out into
+		// an alarm that runs every .5s or 1s?
 		if(!instance_exists(objUFO)) {
 			if(random(100) <= min(1.5 * gameRound, 100)) {
 				event_user(1); // UFO instance creation event
