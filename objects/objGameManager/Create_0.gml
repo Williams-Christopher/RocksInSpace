@@ -10,6 +10,8 @@ bonusLifeEarned = 0;
 lastBonusScore = 0;
 startingLives = 3;
 playerLives = 0;
+UFOAlarmInterval = room_speed * 2;
+UFOBaseSpawnChance = 10;
 
 // For now, gameState just goes NewGame -> NewRound -> Playing -> GameEnding
 gameCurrentState = gameState.NewGame;

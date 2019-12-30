@@ -43,6 +43,7 @@ switch gameCurrentState {
 	case gameState.NewRound:
 		gameRound += 1;
 		event_user(0); // Space rock spawn event
+		alarm[0] = UFOAlarmInterval;
 		gameCurrentState = gameState.Playing;
 	break;
 	
@@ -71,11 +72,11 @@ switch gameCurrentState {
 		// Random chance for a UFO to spawn if one does not exist
 		// This still spawns UFOs almost constantly. Break out into
 		// an alarm that runs every .5s or 1s?
-		if(!instance_exists(objUFO)) {
-			if(random(100) <= min(1.5 * gameRound, 100)) {
-				event_user(1); // UFO instance creation event
-			}
-		}
+		//if(!instance_exists(objUFO)) {
+		//	if(random(100) <= min(.5 * gameRound, 100)) {
+		//		event_user(1); // UFO instance creation event
+		//	}
+		//}
 	break;
 	
 	case gameState.RoundEnding:
